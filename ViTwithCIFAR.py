@@ -60,28 +60,8 @@ train_loader_short = torch.utils.data.DataLoader(dataset=train_dataset_short,
 test_loader_short = torch.utils.data.DataLoader(dataset=test_dataset_short,
                                                 batch_size=batch_size,
                                                 shuffle=False)
-#Defining network parameters
 
 
-
-
-patch_size=4
-embed_dim=96 # dimensionality of the latent space
-n_attention_heads=4 #number of heads to be used")
-forward_mul=2 #forward multiplier
-n_layers=6 #number of encoder layers
-
-# We know that MNIST images are 28 pixels in each dimension.
-img_size = 32
-# Images are stored in one-dimensional arrays of this length.
-img_size_flat = img_size * img_size
-# Tuple with height and width of images used to reshape arrays.
-img_shape = (img_size, img_size)
-# Number of colour channels for the images: 1 channel for gray-scale.
-n_channels = 3
-# Number of classes
-n_classes = 10
-#Using GPU or CPU depending on what is available
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 efficient_transformer = Linformer(
